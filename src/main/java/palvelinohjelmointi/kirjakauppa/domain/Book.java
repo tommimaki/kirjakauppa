@@ -1,13 +1,41 @@
 package palvelinohjelmointi.kirjakauppa.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+// entity annotaatio
+@Entity
 public class Book {
 
+	
+	//autoid
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
+	
+	
+	
 	public String title;
 	public String author;
 	public int year;
 	public int isbn;
 	public int price;
 	
+	
+	public Book	() {}
+	
+	public Book(String title, String author, int year, int isbn, int price) {
+		super();
+		this.title = title;
+		this.author = author;
+		this.year = year;
+		this.isbn = isbn;
+		this.price = price;
+		
+		
+	}
 	public String getTitle() {
 		return title;
 	}
