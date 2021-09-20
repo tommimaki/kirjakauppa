@@ -13,9 +13,8 @@ public class Book {
 	//autoid
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id;
-	
-	
+	// huom muutettu public koska privatella tuli thymeleaf parsing error? pitää varmaan muuttaa vielä
+	public long id;
 	
 	public String title;
 	public String author;
