@@ -16,16 +16,17 @@ public class Book {
 	// huom muutettu public koska privatella tuli thymeleaf parsing error? pitää varmaan muuttaa vielä
 	public long id;
 	
+
 	public String title;
 	public String author;
 	public int year;
-	public int isbn;
-	public int price;
+	public String isbn;
+	public double price;
 	
 	
 	public Book	() {}
 	
-	public Book(String title, String author, int year, int isbn, int price) {
+	public Book(String title, String author, int year, String isbn, double price) {
 		super();
 		this.title = title;
 		this.author = author;
@@ -35,6 +36,17 @@ public class Book {
 		
 		
 	}
+	
+	
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+	
 	public String getTitle() {
 		return title;
 	}
@@ -53,16 +65,16 @@ public class Book {
 	public void setYear(int year) {
 		this.year = year;
 	}
-	public int getIsbn() {
+	public String getIsbn() {
 		return isbn;
 	}
-	public void setIsbn(int isbn) {
+	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 	

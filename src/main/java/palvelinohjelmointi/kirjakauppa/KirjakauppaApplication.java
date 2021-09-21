@@ -20,9 +20,9 @@ public class KirjakauppaApplication {
 	@Bean
 	public CommandLineRunner demo(BookRepository repository) {
 	return (args) -> {
-	 Book Harry1 = new Book("Härri Pötter ja Äzkäbän", "J.K. Rowling" , 2001, 12314, 20);
-	 Book Harry2 = new Book("Härri Pötter ja Tunkkainen Pikari", "J.K. Rowling" , 2004, 12322, 23);
-	 Book Harry3 = new Book("Härri Pötter ja Kuoleman Ahmatit", "J.K. Rowling" , 2006, 123432, 30);
+	 Book Harry1 = new Book("Härri Pötter ja Äzkäbän", "J.K. Rowling" , 2001, "12314", 20);
+	 Book Harry2 = new Book("Härri Pötter ja Tunkkainen Pikari", "J.K. Rowling" , 2004, "12322", 23);
+	 Book Harry3 = new Book("Härri Pötter ja Kuoleman Ahmatit", "J.K. Rowling" , 2006, "123432", 30);
 	 
 	 repository.save(Harry1);
 	 repository.save(Harry2);
