@@ -4,26 +4,36 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 // entity annotaatio
 @Entity
 public class Book {
 
 	
+	
 	//autoid
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	// huom muutettu public koska privatella tuli thymeleaf parsing error? pitää varmaan muuttaa vielä
-	public long id;
+	private long id;
+	//muut attribuutit
+	private String title;
+	private String author;
+	private int year;
+	private String isbn;
+	private double price;
+	
 	
 
-	public String title;
-	public String author;
-	public int year;
-	public String isbn;
-	public double price;
+	// categoryn lisääminen
+	@ManyToOne
+	@JoinColumn(name = "Categoryid")
+	private Category category;
 	
-	
+
+
 	public Book	() {}
 	
 	public Book(String title, String author, int year, String isbn, double price) {
@@ -76,6 +86,14 @@ public class Book {
 	}
 	public void setPrice(double price) {
 		this.price = price;
+	}
+	
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 	
 	@Override
