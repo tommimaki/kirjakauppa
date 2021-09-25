@@ -19,7 +19,7 @@ public class Category {
 	
 	
 	//constructors
-	public Category( ) {}
+	public Category() {}
 	
 	public Category(String name) {
 		super();
@@ -41,9 +41,11 @@ public class Category {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	
 	@Override
 	public String toString() {
-		return "Category Name: " + name + "]";
+		return "Category Name: "+ name ;
 	}
 	
 	
