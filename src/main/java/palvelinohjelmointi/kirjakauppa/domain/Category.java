@@ -17,7 +17,7 @@ public class Category {
 	//id luonti
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long Categoryid;
+	private long categoryid;
 	private String name;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
@@ -32,11 +32,11 @@ public class Category {
 	}
 	
 	public long getCategoryid() {
-		return Categoryid;
+		return categoryid;
 	}
 
 	public void setCategoryid(long Categoryid) {
-		this.Categoryid = Categoryid;
+		this.categoryid = Categoryid;
 	}
 	
 	

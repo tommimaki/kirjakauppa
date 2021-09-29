@@ -10,10 +10,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import palvelinohjelmointi.kirjakauppa.domain.Book;
 import palvelinohjelmointi.kirjakauppa.domain.BookRepository;
+import palvelinohjelmointi.kirjakauppa.domain.CategoryRepository;
 
 
 @Controller
 public class BookController {
+	
+	// repository objektin tuonti controlleriin(huom @autowired)
+	@Autowired
+	private BookRepository repository;
+	@Autowired
+	private CategoryRepository catrep;
 	
 	// indexsivu Getillä
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
@@ -21,9 +28,6 @@ public class BookController {
 		model.addAttribute("title", title);
 		return "kirjakauppa";
 	}
-	// repository objektin tuonti controlleriin(huom @autowired)
-	@Autowired
-	private BookRepository repository;
 	
 	//listview luonti
 	@RequestMapping(value = "/booklist", method = RequestMethod.GET)
@@ -40,6 +44,7 @@ public class BookController {
 	@RequestMapping(value="/add")
 	public String addBook(Model model) {
 		model.addAttribute("book", new Book());
+		model.addAttribute("categories", catrep.findAll());
 		return "addbook";
 	}
 	
