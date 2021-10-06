@@ -16,6 +16,7 @@
 		<th> price </th>
 		<th> year </th>
 		<th> isbn </th>
+		<th> category</th>
 		</tr>
 		
 	<tbody>
@@ -27,7 +28,7 @@
 	<td th:text= "${book.price}"> </td>
 	<td th:text= "${book.year}"> </td>
 	<td th:text= "${book.isbn}"> </td>
-	<td th:text= "${book.category}"> </td>
+	<td th:text= "${book.category.name}"> </td>
 	
 	<td> <a th:href="@{/delete/{id}(id=${book.id})}" class="btn btn-danger"  > Delete</a> </td>
 	<td> <a th:href="@{/edit/{id}(id=${book.id})}"> Edit</a> </td>

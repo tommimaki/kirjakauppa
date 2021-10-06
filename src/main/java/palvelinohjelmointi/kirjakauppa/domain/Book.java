@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 // entity annotaatio
 @Entity
 public class Book {
@@ -16,7 +18,7 @@ public class Book {
 	//autoid
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	// huom muutettu public koska privatella tuli thymeleaf parsing error? pitää varmaan muuttaa vielä
+	
 	private long id;
 	//muut attribuutit
 	private String title;
@@ -29,6 +31,7 @@ public class Book {
 
 	// categoryn lisääminen
 	@ManyToOne
+	@JsonIgnoreProperties ("bookss") 
 	@JoinColumn(name = "Categoryid")
 	private Category category;
 	
